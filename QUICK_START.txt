@@ -1,0 +1,133 @@
+# **QUICK START GUIDE - Hospital Management System**
+
+## Step 1: Install Dependencies
+
+Open PowerShell/Terminal and navigate to the `backend` folder:
+
+```powershell
+cd "n:\5th SEM\web1\backend"
+pip install -r requirements.txt
+```
+
+## Step 2: Start the Backend Server
+
+```powershell
+python main.py
+```
+
+You should see:
+```
+INFO:     Uvicorn running on http://0.0.0.0:8000
+```
+
+✅ Keep this terminal running
+
+## Step 3: Start the Frontend
+
+In another terminal/PowerShell, navigate to frontend folder:
+
+```powershell
+cd "n:\5th SEM\web1\frontend"
+python -m http.server 8001
+```
+
+Or simply open `index.html` directly in your browser.
+
+## Step 4: Access the Application
+
+Open your browser and go to:
+- **Frontend:** `http://localhost:8001` (or open index.html directly)
+- **API Docs:** `http://localhost:8000/docs`
+
+## Step 5: Quick Test
+
+1. **Add a Patient:**
+   - Click "Patients" in sidebar
+   - Click "Add New Patient"
+   - Fill in details (ID: P001, Name, Age, etc.)
+   - Click "Save Patient"
+
+2. **Add Medicine:**
+   - Click "Medicines" in sidebar
+   - Click "Add New Medicine"
+   - Fill details (ID: MED001, Name: Paracetamol, Type: Painkiller, etc.)
+   - Click "Save Medicine"
+
+3. **Add Syringe:**
+   - Click "Syringes" in sidebar
+   - Click "Add New Syringe"
+   - Fill details (ID: SYR001, Size: 5ml, Quantity: 100, MinStock: 20)
+   - Click "Save Syringe"
+
+4. **Add Blood:**
+   - Click "Blood Bank" in sidebar
+   - Click "Update Blood Stock"
+   - Select O+ Blood Group, Quantity: 50, MinStock: 10
+   - Click "Save Blood Stock"
+
+5. **View Dashboard:**
+   - Click "Dashboard" to see all metrics
+   - View inventory analysis
+   - Check alerts on "Low Stock Alerts" page
+
+## File Structure
+
+```
+web1/
+├── backend/
+│   ├── requirements.txt          # Python dependencies
+│   ├── database.py               # SQLite database config
+│   ├── models.py                 # Database models
+│   ├── schemas.py                # Pydantic schemas
+│   ├── main.py                   # FastAPI application
+│   └── hospital_management.db    # Auto-created database
+│
+├── frontend/
+│   ├── index.html                # Main HTML page
+│   ├── styles.css                # Styling
+│   └── script.js                 # JavaScript logic
+│
+└── README.md                      # Full documentation
+```
+
+## Database
+
+The database (`hospital_management.db`) is automatically created in the backend folder on first run.
+
+To reset: Delete `hospital_management.db` and restart the backend.
+
+## Troubleshooting
+
+### Port Already in Use
+```powershell
+# Change frontend port if 8001 is taken:
+python -m http.server 8002
+# Then visit: http://localhost:8002
+```
+
+### API Not Responding
+- Ensure backend is running on `http://localhost:8000`
+- Check firewall settings
+- Try restarting both services
+
+### Database Errors
+- Delete `hospital_management.db` file
+- Restart backend server
+
+## Key Features Implemented
+
+✅ All patient records management
+✅ Complete medicine inventory tracking
+✅ Syringe stock management
+✅ Blood bank with different blood groups
+✅ Inventory analysis dashboard
+✅ Automatic low stock alerts
+✅ Search functionality
+✅ Real-time statistics
+✅ Modern responsive UI
+✅ SQLite database
+✅ FastAPI REST API
+
+---
+
+**Everything is ready to use! Start with Step 1 and follow through.**
